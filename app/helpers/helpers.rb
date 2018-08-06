@@ -1,9 +1,12 @@
+require 'sinatra/base'
+
 class Helpers
 
-  def current_user
+  def self.current_user(session)
+    @user = User.find_by_id(params[:user_id])
   end
 
-  def is_logged_in?
+  def self.is_logged_in?(session)
   end
   
 end
